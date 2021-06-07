@@ -1,9 +1,12 @@
 import { NextPage } from 'next'
+import { Titulo } from './styles'
+import Loading from 'components/Loading'
 
-export const Home: NextPage = (): JSX.Element => {
+const Home: NextPage = (): JSX.Element => {
   return (
     <div>
-      <h1>Next + TypeScript</h1>
+      <Loading />
+      <Titulo>Pokedex</Titulo>
     </div>
   )
 }
