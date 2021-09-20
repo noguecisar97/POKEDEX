@@ -1,13 +1,14 @@
 import { NextPage } from 'next'
-import { Titulo, Container } from './styles'
-import Loading from 'components/Loading'
+import { Container } from './styles'
+import { Loading } from 'components/Loading'
 import ListaPokemon from 'components/ListaPokemon'
+import { Header } from 'components/Header'
 
 const Home: NextPage = (): JSX.Element => {
   return (
     <Container>
       <Loading />
-      <Titulo>Pokedex</Titulo>
+      <Header />
       <ListaPokemon />
     </Container>
   )

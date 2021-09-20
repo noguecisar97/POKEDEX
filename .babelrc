@@ -1,3 +1,50 @@
 {
-  "presets": ["next/babel"]
+  "presets": [["next/babel"]],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "styled-components",
+          { "ssr": true, "displayName": true, "preprocess": false }
+        ]
+      ],
+      "presets": ["next/babel"]
+    },
+    "production": {
+      "plugins": [
+        [
+          "styled-components",
+          { "ssr": true, "displayName": true, "preprocess": false }
+        ]
+      ],
+      "presets": ["next/babel"]
+    }
+  },
+  "plugins": [
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "@material-ui/core",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false,
+      },
+      "core",
+    ],
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "@material-ui/icons",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false,
+      },
+      "icons",
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./"]
+      },
+      "babel-plugin-styled-components"
+    ]
+  ]
 }

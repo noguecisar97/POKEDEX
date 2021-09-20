@@ -75,6 +75,12 @@ module.exports = {
         "prefer-const": WARNING,
         "react/prop-types": OFF,
         "semi": [WARNING, "never"],
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": ["@material-ui/*/*/*", "!@material-ui/core/test-utils/*"]
+          }
+        ],
       },
     },
   ],

@@ -1,0 +1,1 @@
+export { requestPokemons } from './Pokemon'

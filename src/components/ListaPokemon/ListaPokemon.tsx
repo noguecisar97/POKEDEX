@@ -1,27 +1,21 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
-import type { DataResponsePokemon } from './types'
+import { requestPokemons } from 'services'
+import type { ResultPokeInitial } from './types'
 
 const ListaPokemon = (): JSX.Element => {
-  const [pokemons, setPokemons] = useState<DataResponsePokemon>()
+  const [pokemons, setPokemons] = useState<ResultPokeInitial[]>([])
 
   useEffect(() => {
-    const pokes = async (): Promise<void> => {
-      await axios
-        .get<DataResponsePokemon>('/api/pokemon')
-        .then(({ data }) => {
-          setPokemons(data)
-        })
-        .catch(() => {
-          setPokemons({} as DataResponsePokemon)
-        })
-    }
-    pokes()
+    requestPokemons().then((data) => {
+      setPokemons(data.results)
+    })
   }, [])
 
   return (
     <div>
-      <ul>{pokemons && pokemons.results[0].name}</ul>
+      {pokemons.map((e) => (
+        <p key={e.name}> {e.name} </p>
+      ))}
     </div>
   )
 }

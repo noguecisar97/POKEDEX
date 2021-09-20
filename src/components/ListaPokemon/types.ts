@@ -5,7 +5,7 @@ export type DataResponsePokemon = {
   results: ResultPokeInitial[]
 }
 
-type ResultPokeInitial = {
+export type ResultPokeInitial = {
   name: string
   url: string
 }
