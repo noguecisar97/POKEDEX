@@ -1,9 +1,10 @@
 import LinearProgress from '@material-ui/core/LinearProgress'
 import { Container, Contend } from './styles'
+import { IProps } from './types'
 
-export const Loading = (): JSX.Element => {
+export const Loading = ({ active }: IProps): JSX.Element => {
   return (
-    <Container>
+    <Container active={active}>
       <Contend>
         <LinearProgress color="secondary" />
       </Contend>

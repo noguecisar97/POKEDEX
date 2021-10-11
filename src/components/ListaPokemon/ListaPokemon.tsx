@@ -1,8 +1,10 @@
+import { Card } from 'components/Card'
 import { useEffect, useState } from 'react'
 import { requestPokemons } from 'services'
+import { Container } from './styles'
 import type { ResultPokeInitial } from './types'
 
-const ListaPokemon = (): JSX.Element => {
+export const ListaPokemon = (): JSX.Element => {
   const [pokemons, setPokemons] = useState<ResultPokeInitial[]>([])
 
   useEffect(() => {
@@ -12,12 +14,10 @@ const ListaPokemon = (): JSX.Element => {
   }, [])
 
   return (
-    <div>
+    <Container>
       {pokemons.map((e) => (
-        <p key={e.name}> {e.name} </p>
+        <Card name={e.name} key={e.name} />
       ))}
-    </div>
+    </Container>
   )
 }
-
-export default ListaPokemon

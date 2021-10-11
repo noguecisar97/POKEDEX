@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import api from '../instance'
-import type { DataResponsePokemon } from './types'
+import type { DataResponsePokemon } from 'services/types'
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,7 +9,7 @@ export default async function handler(
   const { method } = req
   try {
     if (method === 'GET') {
-      const { data, status } = await api.get('/pokemon?limit=100', {
+      const { data, status } = await api.get('/pokemon?limit=5', {
         headers: {
           'Content-type': 'application/json',
         },

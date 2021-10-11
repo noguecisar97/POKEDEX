@@ -1,1 +1,1 @@
-export { requestPokemons } from './Pokemon'
+export { requestPokemons, findPokemon } from './Pokemon'

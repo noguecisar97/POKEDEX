@@ -5,6 +5,8 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../themes/global'
 import { theme } from '../themes'
 import Head from 'next/head'
+import { Header } from 'components/Header'
+import { Loading } from 'components/Loading'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -18,10 +20,12 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>My App</title>
+        <title>Pokedex</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
+        <Loading active={false} />
+        <Header />
         <Component {...pageProps} />
         <GlobalStyle />
       </ThemeProvider>

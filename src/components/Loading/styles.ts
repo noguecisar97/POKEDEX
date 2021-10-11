@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+import { IContainer } from './types'
 
-export const Container = styled.div`
-  background-color: #0001;
+export const Container = styled.div<IContainer>`
+  display: ${(props) => (props.active ? 'flex' : 'none')};
+  background-color: #000;
   position: fixed;
   z-index: 100;
   top: 0;
@@ -10,7 +12,6 @@ export const Container = styled.div`
   height: 100vh;
   width: 100vw;
 
-  display: flex;
   align-items: center;
   justify-content: center;
 
