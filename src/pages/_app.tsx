@@ -3,7 +3,7 @@ import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from '../themes/global'
-import theme from '../themes/theme'
+import { theme } from '../themes'
 import Head from 'next/head'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
