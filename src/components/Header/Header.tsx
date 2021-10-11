@@ -1,5 +1,9 @@
-import { Titulo } from './styles'
+import { Titulo, Container } from './styles'
 
 export const Header: React.FC = (): JSX.Element => {
-  return <Titulo>Pokedex</Titulo>
+  return (
+    <Container>
+      <Titulo>Pokedex</Titulo>
+    </Container>
+  )
 }

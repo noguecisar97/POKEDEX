@@ -3,11 +3,14 @@ import styled from 'styled-components'
 
 export const CardCustom = styled(Card)`
   width: 345px;
+
+  display: flex;
 `
 
 export const CardImage = styled(CardMedia)<CardMediaProps>`
-  height: 50px;
-  width: 50px;
+  width: 120px;
+
+  padding: 5px;
 `
 
 export const CardAbout = styled(CardContent)``

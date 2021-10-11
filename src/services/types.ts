@@ -40,6 +40,163 @@ export interface IFindPokemonResponse {
   }
   sprites: {
     back_default: string
+    back_female: string | null
+    back_shiny: string | null
+    back_shiny_female: null | string
+    front_default: string
+    front_female: null | string
+    front_shiny: string | null
+    front_shiny_female: null | string
+    other: {
+      dream_world: {
+        front_default: string
+        front_female: null | string
+      }
+
+      'official-artwork': {
+        front_default: string
+      }
+    }
+    versions: {
+      'generation-i': {
+        'red-blue': {
+          back_default: string
+          back_gray: string | null
+          front_default: string
+          front_gray: string | null
+        }
+        yellow: {
+          back_default: string
+          back_gray: string | null
+          front_default: string
+          front_gray: string | null
+        }
+      }
+      'generation-ii': {
+        crystal: {
+          back_default: string
+          back_shiny: string | null
+          front_default: string
+          front_shiny: string | null
+        }
+        gold: {
+          back_default: string
+          back_shiny: string | null
+          front_default: string
+          front_shiny: string | null
+        }
+        silver: {
+          back_default: string
+          back_shiny: string | null
+          front_default: string
+          front_shiny: string | null
+        }
+      }
+      'generation-iii': {
+        emerald: {
+          front_default: string
+          front_shiny: string | null
+        }
+        'firered-leafgreen': {
+          back_default: string
+          back_shiny: null | string
+          front_default: string
+          front_shiny: null | string
+        }
+        'ruby-sapphire': {
+          back_default: string
+          back_shiny: null | string
+          front_default: string
+          front_shiny: null | string
+        }
+      }
+      'generation-iv': {
+        'diamond-pearl': {
+          back_default: string
+          back_female: null | string
+          back_shiny: null | string
+          back_shiny_female: null | string
+          front_default: string
+          front_female: null | string
+          front_shiny: null | string
+          front_shiny_female: null | string
+        }
+        'hearthgold-soulsilver': {
+          back_default: string
+          back_female: null | string
+          back_shiny: string
+          back_shiny_female: null | string
+          front_default: string
+          front_female: null | string
+          front_shiny: string
+          front_shiny_female: null | string
+        }
+        platinum: {
+          back_default: string
+          back_female: null | string
+          back_shiny: string
+          back_shiny_female: null | string
+          front_default: string
+          front_female: null | string
+          front_shiny: string
+          front_shiny_female: null | string
+        }
+      }
+      'generation-v': {
+        'black-white': {
+          animated: {
+            back_default: string
+            back_female: string | null
+            back_shiny_female: null | string
+            front_default: string
+            front_female: string | null
+            back_shiny: string
+            front_shiny: string
+            front_shiny_female: string | null
+          }
+          back_default: string
+          back_female: string | null
+          back_shiny_female: null | string
+          front_default: string
+          front_female: string | null
+          back_shiny: string
+          front_shiny: string
+          front_shiny_female: string | null
+        }
+      }
+      'generation-vi': {
+        'omegaruby-alphasapphire': {
+          front_default: string
+          front_female: string | null
+          front_shiny: string
+          front_shiny_female: string | null
+        }
+        'x-y': {
+          front_default: string
+          front_female: string | null
+          front_shiny: string
+          front_shiny_female: string | null
+        }
+      }
+      'generation-vii': {
+        icons: {
+          front_default: string
+          front_female: null | string
+        }
+        'ultra-sun-ultra-moon': {
+          front_default: string
+          front_female: string | null
+          front_shiny: string
+          front_shiny_female: string | null
+        }
+      }
+      'generation-viii': {
+        icons: {
+          front_default: string
+          front_female: null | string
+        }
+      }
+    }
   }
   stats: IStats[]
   types: ITypes[]

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { CardAbout, CardCustom, CardImage, CardLink } from './styles'
 import { findPokemon } from 'services'
 import { IFindPokemonResponse } from 'services/types'
+import { Button, ButtonGroup, Typography } from '@material-ui/core'
 
 export const Card = ({ name }: IProps): JSX.Element => {
   useEffect(() => {
@@ -15,9 +16,20 @@ export const Card = ({ name }: IProps): JSX.Element => {
     <CardCustom>
       {pokemon && (
         <>
-          <CardImage title={pokemon.name} image={pokemon.sprites.back_default} />
-          <CardAbout></CardAbout>
-          <CardLink></CardLink>
+          <CardImage
+            title={pokemon.name}
+            image={pokemon.sprites.versions['generation-i']['red-blue'].front_default}
+          />
+          <CardAbout>
+            <Typography>{pokemon.name.toUpperCase()}</Typography>
+            <Typography>Altura: {pokemon.height}</Typography>
+            <Typography>Peso: {pokemon.weight}</Typography>
+          </CardAbout>
+          <CardLink>
+            <ButtonGroup>
+              <Button> Detalhes </Button>
+            </ButtonGroup>
+          </CardLink>
         </>
       )}
     </CardCustom>

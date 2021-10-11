@@ -6,4 +6,6 @@ export const Container = styled.div`
   gap: 10px;
   flex-wrap: wrap;
   align-items: center;
+
+  padding: 10px;
 `
