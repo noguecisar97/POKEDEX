@@ -1,9 +1,9 @@
 import { IProps } from './types'
 import React, { useEffect, useState } from 'react'
-import { CardAbout, CardCustom, CardImage, CardLink } from './styles'
+import { CardAbout, CardCustom, CardImage, CardLink, Text, CardLine } from './styles'
 import { findPokemon } from 'services'
 import { IFindPokemonResponse } from 'services/types'
-import { Button, ButtonGroup, Typography } from '@material-ui/core'
+import { Button, ButtonGroup } from '@material-ui/core'
 
 export const Card = ({ name }: IProps): JSX.Element => {
   useEffect(() => {
@@ -15,22 +15,24 @@ export const Card = ({ name }: IProps): JSX.Element => {
   return (
     <CardCustom>
       {pokemon && (
-        <>
+        <CardLine>
           <CardImage
             title={pokemon.name}
-            image={pokemon.sprites.versions['generation-i']['red-blue'].front_default}
+            image={pokemon.sprites.versions['generation-v']['black-white'].animated.front_default}
           />
           <CardAbout>
-            <Typography>{pokemon.name.toUpperCase()}</Typography>
-            <Typography>Altura: {pokemon.height}</Typography>
-            <Typography>Peso: {pokemon.weight}</Typography>
+            <Text>{pokemon.name.toUpperCase().replace('-', ' ')}</Text>
+            <Text>Altura: {pokemon.height}</Text>
+            <Text>Peso: {pokemon.weight}</Text>
           </CardAbout>
-          <CardLink>
-            <ButtonGroup>
-              <Button> Detalhes </Button>
-            </ButtonGroup>
-          </CardLink>
-        </>
+        </CardLine>
+      )}
+      {pokemon && (
+        <CardLink>
+          <ButtonGroup>
+            <Button> Detalhes </Button>
+          </ButtonGroup>
+        </CardLink>
       )}
     </CardCustom>
   )
