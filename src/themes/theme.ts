@@ -1,7 +1,12 @@
-const theme = {
+import { themeProps } from './types'
+
+export const theme: themeProps = {
+  name: 'comunidade',
   colors: {
-    background: '#0002',
+    primary: '#1B6E74',
+    secondary: '#ffffff',
+    third: '#17161F',
+    fourth: '#08474B',
+    fifth: '#079B9B',
   },
 }
-
-export default theme

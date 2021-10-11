@@ -7,6 +7,6 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    font: 400 16px Roboto, sans-serif;
+    font: 400 16px Roboto sans-serif;
   }
 `

@@ -9,7 +9,7 @@ export default async function handler(
   const { method } = req
   try {
     if (method === 'GET') {
-      const { data, status } = await api.get('pokemon?limit=100', {
+      const { data, status } = await api.get('/pokemon?limit=100', {
         headers: {
           'Content-type': 'application/json',
         },
