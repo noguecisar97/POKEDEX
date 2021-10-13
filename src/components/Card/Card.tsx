@@ -1,14 +1,32 @@
 import { IProps } from './types'
 import React, { useEffect, useState } from 'react'
 import { CardAbout, CardCustom, CardImage, CardLink, Text, CardLine } from './styles'
-import { findPokemon } from 'services'
+import { ApplicationState } from 'stores'
 import { IFindPokemonResponse } from 'services/types'
 import { Button, ButtonGroup } from '@material-ui/core'
+import { useDispatch, useSelector } from 'react-redux'
+import { FindPokemon } from 'stores/ducks/pokemons/action'
 
 export const Card = ({ name }: IProps): JSX.Element => {
+  const dispatch = useDispatch()
+
+  const { poke } = useSelector((state: ApplicationState) => {
+    return {
+      poke: state.pokemons.data.find((e) => e.name === name),
+    }
+  })
+
   useEffect(() => {
-    findPokemon({ name }).then((resp) => setPokemon(resp))
-  }, [name])
+    if (!poke) {
+      dispatch(FindPokemon({ search: name }))
+    }
+  }, [dispatch, name, poke])
+
+  useEffect(() => {
+    if (poke && poke.requestSuccess) {
+      setPokemon(poke.details)
+    }
+  }, [poke])
 
   const [pokemon, setPokemon] = useState<IFindPokemonResponse>()
 
@@ -34,6 +52,7 @@ export const Card = ({ name }: IProps): JSX.Element => {
           </ButtonGroup>
         </CardLink>
       )}
+      {!pokemon && <>{/* <Skeleton variant="rect" width={210} height={118} /> */}</>}
     </CardCustom>
   )
 }
