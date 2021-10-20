@@ -2,8 +2,7 @@ import { Card, CardActions, CardContent, CardMedia, CardMediaProps } from '@mate
 import styled from 'styled-components'
 
 export const CardCustom = styled(Card)`
-  width: 345px;
-  height: 200px;
+  width: 390px;
 
   display: flex;
   justify-content: space-around;
@@ -15,7 +14,10 @@ export const CardImage = styled(CardMedia)<CardMediaProps>`
   width: 125px;
   height: 120px;
   padding: 15px;
-  background-size: contain !important;
+
+  && {
+    background-size: auto;
+  }
 `
 
 export const CardAbout = styled(CardContent)`
@@ -39,4 +41,13 @@ export const CardLine = styled.div`
   justify-content: center;
 
   min-height: 130px;
+`
+
+export const CardHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 5px;
 `

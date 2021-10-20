@@ -8,5 +8,6 @@ export default createGlobalStyle`
   }
   body {
     font: 400 10px Roboto sans-serif;
+    background-color: #17161F;
   }
 `
